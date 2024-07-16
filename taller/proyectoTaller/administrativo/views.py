@@ -72,8 +72,6 @@ def logout_view(request):
 
 ## ---------------- crear
 
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def crear_edificio(request):
     if request.method=='POST':
         formulario = EdificioForm(request.POST)
@@ -88,8 +86,6 @@ def crear_edificio(request):
     return render(request, 'crear_edificio.html', diccionario)
 
 
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def crear_departamento(request):
     if request.method=='POST':
         formulario = DepartamentoForm(request.POST)
@@ -108,8 +104,7 @@ def crear_departamento(request):
 
 ## ---------------- editar
 
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
+
 def editar_edificio(request, id):
     edificio = Edificio.objects.get(pk=id)
     if request.method=='POST':
@@ -125,8 +120,6 @@ def editar_edificio(request, id):
     return render(request, 'editar_edificio.html', diccionario)
 
 
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def editar_departamento(request, id):
     departamento = Departamento.objects.get(pk=id)
     if request.method=='POST':
@@ -146,16 +139,11 @@ def editar_departamento(request, id):
 
 ## ---------------- eliminar
 
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def eliminar_edificio(request, id):
     edificio = Edificio.objects.get(pk=id)
     edificio.delete()
     return redirect(index)
 
-
-@login_required(login_url='/entrando/login/')
-@permission_required('administrativo.add_estudiante', login_url="/entrando/login/")
 def eliminar_departamento(request, id):
     departamento = Departamento.objects.get(pk=id)
     departamento.delete()
