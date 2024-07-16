@@ -6,15 +6,15 @@
     <title>Demo</title>
   </head>
   <body>
-    <h5>Listado de estudiantes - {{numero_estudiantes}}</h5>
+    <h5>Listado de estudiantes - {{nEdificios}}</h5>
 
     {% for e in estudiantes %}
 
     <ol>
       <li><b>Nombre: </b>{{e['nombre']}}</li>
-      <li><b>Apellido: </b>{{e['apellido']}}</li>
-      <li><b>Cédula: </b>{{e['cedula']}}</li>
-      <li><b>Correo: </b>{{e['correo']}}</li>
+      <li><b>Apellido: </b>{{e['direccion']}}</li>
+      <li><b>Cédula: </b>{{e['ciudad']}}</li>
+      <li><b>Correo: </b>{{e['tipo']}}</li>
     </ol>
     <hr>
     {% endfor%}

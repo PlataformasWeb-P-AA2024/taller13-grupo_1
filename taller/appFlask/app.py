@@ -9,16 +9,16 @@ def hello_world():
     return render_template("index.html")
 
 
-@app.route("/losestudiantes")
-def los_estudiantes():
+@app.route("/lisedificios")
+def listar_edificios():
     """
     """
-    r = requests.get("http://127.0.0.1:8000/api/estudiantes/",
-            auth=('jose', '12345'))
-    estudiantes = json.loads(r.content)['results']
-    numero_estudiantes = json.loads(r.content)['count']
-    return render_template("losestudiantes.html", estudiantes=estudiantes,
-    numero_estudiantes=numero_estudiantes)
+    r = requests.get("http://127.0.0.1:8000/api/edificios/",
+            auth=('admin', '1'))
+    edificios = json.loads(r.content)['results']
+    nEdificios = json.loads(r.content)['count']
+    return render_template("losestudiantes.html", edificios=edificios,
+    nEdificios=nEdificios)
 
 
 @app.route("/lostelefonos")
