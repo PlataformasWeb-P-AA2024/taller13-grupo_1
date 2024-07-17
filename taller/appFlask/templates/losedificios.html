@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Edificios</title>
+  </head>
+  <body>
+    <h2 style="color:chocolate;">Listado de edificios - {{nEdificios}}</h2>
+
+    {% for e in edificios %}
+
+    <ol>
+      <li><b>Nombre: </b>{{e['nombre']}}</li>
+      <li><b>Direccion: </b>{{e['direccion']}}</li>
+      <li><b>Ciudad: </b>{{e['ciudad']}}</li>
+      <li><b>Tipo: </b>{{e['tipo']}}</li>
+    </ol>
+    <hr>
+    {% endfor%}
+
+    <a href="{{ url_for('index') }}">Volver</a>
+  </body>
+</html>

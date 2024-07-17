@@ -15,11 +15,6 @@ class EdificioForm(ModelForm):
             'tipo': _('Seleccione el tipo:'),
         }
 
-    def clean_ciudad(self):
-        valor = self.cleaned_data['ciudad']
-        if valor.startswith('L'):
-            raise forms.ValidationError("El nombre de la ciudad no puede iniciar con la letra mayúscula L")
-        return valor
 
 class DepartamentoForm(forms.ModelForm):
     class Meta:
@@ -31,24 +26,5 @@ class DepartamentoForm(forms.ModelForm):
             'nCuartos': _('Ingrese el Número de cuartos'),
             'edificio': _('Seleccione edificio'),
         }
-
-    def clean_nombre(self):
-        valor = self.cleaned_data['nombre']
-        num_palabras = len(valor.split())
-        if num_palabras < 3:
-            raise forms.ValidationError("El nombre de un propietario no debe tener menos de 3 palabras.")
-        return valor
-
-    def clean_costo(self):
-        valor = self.cleaned_data['costo']
-        if valor > 100000:
-            raise forms.ValidationError("El costo de un departamento no puede ser mayor a $100 mil.")
-        return valor
-
-    def clean_nCuartos(self):
-        valor = self.cleaned_data['nCuartos']
-        if valor == 0 or valor > 7:
-            raise forms.ValidationError("El número de cuartos no puede ser 0, ni mayor a 7.")
-        return valor
     
 

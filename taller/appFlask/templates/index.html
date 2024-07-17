@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Demo</title>
+    <title>EDIFICIOS Y DEPARTAMENTOS</title>
   </head>
   <body>
     <nav class="top_menu">
+      <h2 style="color:chocolate;">Seleccione una opción: </h2>
         <ul>
-          <li><a href="{{% url_for 'listar_edificios' %}}">INICIO</a></li>
+          <li><a href="{{ url_for('listar_edificios') }}">Listar Edificios</a></li>
+          <li><a href="{{ url_for('los_departamentos') }}">Listar departamentos</a></li>
+          <li><a href="{{ url_for('crear_edificios') }}">Crear edificios</a></li>
         </ul>
       </nav>
   </body>

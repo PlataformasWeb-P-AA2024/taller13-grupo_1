@@ -31,13 +31,13 @@ router.register(r'departamentos', views.DepartamentoViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('administrativo.urls')),
+    
     path('accounts/', include('allauth.urls')),
     # http://127.0.0.1:8000/api/users
     # http://127.0.0.1:8000/api/groups
     # http://127.0.0.1:8000/api/estudiantes
     # http://127.0.0.1:8000/api/numerosts
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 
 ]

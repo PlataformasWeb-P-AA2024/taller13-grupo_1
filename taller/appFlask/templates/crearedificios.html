@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Edificios</title>
+</head>
+<body>
+    <h2 style="color:chocolate;">Crear Edificios</h2>
+    <form method="POST" action="{{ url_for('crear_edificios') }}">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required>
+        <br><br>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" required>
+        <br><br>
+        
+        <label for="tipo">Tipo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="residencial">Residencial</option>
+            <option value="comercial">Comercial</option>
+        </select>
+        <br><br>
+        <button type="submit">Crear</button>
+    </form>
+    <br><br>
+    <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>

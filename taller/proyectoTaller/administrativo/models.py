@@ -25,6 +25,6 @@ class Departamento(models.Model):
             related_name="edificio_departamento")
 
     def __str__(self):
-        return "%s %s" % (self.nombre, 
+        return "%s %s %s" % (self.nombre, 
                 self.costo, 
                 self.nCuartos)
