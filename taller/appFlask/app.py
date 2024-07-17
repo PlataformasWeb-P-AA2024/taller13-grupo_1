@@ -75,7 +75,7 @@ def crear_edificios():
         auth=('admin', '1'))
         print(r)
         
-        return redirect(url_for('index'))
+        return redirect(url_for('listar_edificios'))
 
     return render_template("crearedificios.html")
 

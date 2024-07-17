@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2 style="color:chocolate;">Crear Edificios</h2>
-    <form method="POST" action="{{ url_for('crear_edificios') }}">
+    <form method="POST" action="">
 
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
@@ -29,6 +29,6 @@
         <button type="submit">Crear</button>
     </form>
     <br><br>
-    <a href="{{ url_for('index') }}">Volver</a>
+    <a href="{{ url_for('index') }}">Inicio</a>
 </body>
 </html>
